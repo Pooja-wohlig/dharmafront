@@ -60,7 +60,7 @@
         }]
     }, {
         "name": "Synopsis Text Box",
-        "type": "textarea",
+        "type": "tinymce",
         "tableRef": "synopsis",
         "placeholder": "Enter name",
         "id": "input2",
