@@ -13,9 +13,7 @@
             "name": "Order",
             "isSort": "",
             "tableRef": "order"
-        }
-
-    ],
+    }],
     "action": [{
         "name": "edit",
         "icon": "mode_edit",

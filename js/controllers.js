@@ -238,32 +238,15 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 console.log($scope.json.createButtonState);
                 $scope.api1 = $scope.json.sidemenu[1].callFindOne;
                 if ($scope.json.sidemenu[1].sendParam && $scope.json.sidemenu[1].sendParam !== '') {
-                    // ARRAY
-                    // $scope.pagination1._id = urlid1;
                     $scope.pagination1._id = urlid1;
-                    // NavigationService.sideMenu1($scope.api1, $scope.pagination1, function(data) {
-                    //     if (data.data.nominee) {
-                    //         $scope.json.tableData = data.data;
-                    //         console.log("IF");
-                    //         console.log($scope.json.tableData);
-                    //     }
-                    // }, function() {
-                    //     console.log("fail");
-                    // });
                 } else {
                     console.log("ELSE");
                     $scope.pagination._id = urlid1;
-                    // NavigationService.sideMenu1($scope.api1, $scope.pagination, function(data) {
-                    //     $scope.json.tableData = data.data.data;
-                    //     console.log($scope.json.tableData);
-                    // }, function() {
-                    //     console.log("fail");
-                    // });
                 }
             }
             // call api for view data
             $scope.apiName = $scope.json.apiCall.url;
-            $scope.pageInfo = {totalitems:100};
+            $scope.pageInfo = {totalitems:5000};
             $scope.getMoreResults = function(value) {
                 if(value)
                 {
