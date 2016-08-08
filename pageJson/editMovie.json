@@ -59,6 +59,14 @@
             "name": "Past"
         }]
     }, {
+        "name": "Upcoming Order",
+        "type": "text",
+        "tableRef": "upcomingOrder",
+        "placeholder": "Enter Upcoming Order",
+        "id": "input2",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
         "name": "Synopsis Text Box",
         "type": "tinymce",
         "tableRef": "synopsis",
