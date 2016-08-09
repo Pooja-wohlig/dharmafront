@@ -65,7 +65,8 @@
         "placeholder": "Enter Upcoming Order",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
-        "url": ""
+        "url": "",
+        "model": "upcomingOrder"
     },{
         "name": "Synopsis Text Box",
         "type": "tinymce",

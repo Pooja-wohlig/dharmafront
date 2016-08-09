@@ -46,6 +46,7 @@
     }, {
         "name": "Upcoming Order",
         "type": "text",
+        "model": "upcomingOrder",
         "tableRef": "upcomingOrder",
         "placeholder": "Enter Upcoming Order",
         "id": "input1",
