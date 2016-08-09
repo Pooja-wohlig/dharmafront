@@ -265,9 +265,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                               $scope.json.tableData = findData.data.data;
                           } else {
                               $scope.json.tableData = [];
+                                $scope.pageInfo.totalitems = 0;
                           }
                       } else {
                           $scope.json.tableData = [];
+                          $scope.pageInfo.totalitems = 0;
                       }
                       console.log($scope.pagination);
                   }, function() {
@@ -362,17 +364,6 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
         // CALL GENERAL API
         NavigationService.saveApi($scope.formData, $scope.apiName, function(data) {
             window.history.back();
-            // if ($scope.json.action[0].submitUrl && $scope.urlid && !$scope.urlid2) {
-            //     $location.url("/page/" + $scope.json.action[0].submitUrl + $scope.urlid);
-            //
-            // } else if ($scope.json.action[0].submitUrl && $scope.urlid2) {
-            //     $location.url("/page/" + $scope.json.action[0].submitUrl + $scope.urlid2);
-            // } else {
-            //     $state.go("page", {
-            //         jsonName: $scope.json.jsonPage
-            //     });
-            // }
-
         }, function() {
             // showToast("Error saving the Project");
             console.log("Fail");
