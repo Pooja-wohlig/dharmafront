@@ -6,7 +6,7 @@
             "name": "Order",
             "isSort": "",
             "tableRef": "order"
-        },{
+        }, {
             "name": "Name",
             "isSort": "",
             "tableRef": "name"
@@ -14,17 +14,21 @@
             "name": "Upcoming Release",
             "isSort": "",
             "tableRef": "upcomingSmall",
-            "type":"image"
+            "type": "image"
         }, {
             "name": "Recent Release",
             "isSort": "",
             "tableRef": "recentSmall",
-            "type":"image"
+            "type": "image"
         }, {
             "name": "Past Release",
             "isSort": "",
             "tableRef": "smallImage",
-            "type":"image"
+            "type": "image"
+        }, {
+            "name": "Month",
+            "isSort": "",
+            "tableRef": "month"
         }, {
             "name": "Year",
             "isSort": "",

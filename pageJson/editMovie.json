@@ -13,7 +13,7 @@
         "id": "input1",
         "validation": ["required", "trim", "unique"],
         "url": ""
-    },{
+    }, {
         "name": "Id",
         "type": "hidden",
         "tableRef": "_id",
@@ -41,6 +41,15 @@
         "validation": ["required", "trim", "unique"],
         "url": ""
     }, {
+        "name": "Month",
+        "type": "text",
+        "tableRef": "month",
+        "placeholder": "Enter month",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "model": "month"
+    }, {
         "name": "Release Type",
         "type": "select",
         "tableRef": "releaseType",
@@ -67,7 +76,7 @@
         "validation": ["required", "trim", "unique"],
         "url": "",
         "model": "upcomingOrder"
-    },{
+    }, {
         "name": "Synopsis Text Box",
         "type": "tinymce",
         "tableRef": "synopsis",
@@ -228,7 +237,7 @@
         "jsonPage": "viewWallpaper",
         "fieldsToSend": [1],
         "callFindOne": "movie/findWallpaper"
-    },  {
+    }, {
         "name": "Behind The Scenes",
         "action": "sidemenuRedirect",
         "jsonPage": "viewBehind",
