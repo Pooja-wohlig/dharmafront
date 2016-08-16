@@ -50,7 +50,7 @@ firstapp.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
         controller: 'jsonViewCtrl'
     })
     .state('pageno', {
-        url: "/page/:jsonName/:no",
+        url: "/page/:jsonName/:no/:search",
         templateUrl: "views/template.html",
         controller: 'jsonViewCtrl'
     });
@@ -85,7 +85,7 @@ firstapp.filter('getValue', function($filter) {
             _.each(keyArr, function(n) {
                 returnValue = returnValue[n];
             });
-    
+
             if (type == "date") {
                 console.log('in date');
                 // return new Date(returnValue);

@@ -236,6 +236,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             {
                 pageno = parseInt($stateParams.no);
             }
+            if($stateParams.search)
+            {
+                $scope.search = $stateParams.search;
+                console.log($scope.search);
+            }
             $scope.pagination = {
                 "search": $scope.search,
                 "pagenumber": pageno,
@@ -266,15 +271,27 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             $scope.pageInfo = {totalitems:5000};
             $scope.getMoreResults = function(value,search) {
               $scope.search=search;
-              console.log(search);
+              $scope.value=value;
                 if(value)
                 {
                       console.log($scope.search);
-                  $state.go("pageno",{no:$scope.pagination.pagenumber,jsonName:$stateParams.jsonName});
+                      if($scope.search===undefined){
+                            $scope.search = $stateParams.search;
+                            console.log($scope.search);
+                      }
+                  $state.go("pageno",{no:$scope.pagination.pagenumber,jsonName:$stateParams.jsonName,search:$scope.search});
                 }
                 else {
-                      console.log($scope.search);
-                      $scope.pagination.search=$scope.search;
+                  if($scope.search){
+                    $scope.pagination.search=$scope.search;
+                  }
+                  else if($scope.pagination.search){
+                        $scope.pagination.search=$scope.pagination.search;
+                  }
+                  else{
+                    $scope.pagination.search='';
+                  }
+                  console.log($scope.pagination);
                   NavigationService.findProjects($scope.apiName, $scope.pagination, function(findData) {
                       console.log(findData);
                       if (findData.value !== false) {

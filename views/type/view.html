@@ -56,8 +56,9 @@
         </md-list-item>
         <!-- {{pageInfo}}{{pagination}} -->
         <div class="" ng-if="pageInfo.totalitems"></div>
-
-        <uib-pagination force-ellipses="true" boundary-link-numbers="true" max-size="16" rotate="true" ng-show="json.tableData.length>=0" ng-change="getMoreResults(true)" total-items="pageInfo.totalitems" ng-model="pagination.pagenumber" items-per-page="pagination.pagesize"></uib-pagination>
+{{search}}
+        <uib-pagination force-ellipses="true" boundary-link-numbers="true" max-size="16" rotate="true" ng-show="json.tableData.length>=0" ng-if="!search" ng-change="getMoreResults(true)" total-items="pageInfo.totalitems" ng-model="pagination.pagenumber" items-per-page="pagination.pagesize"></uib-pagination>
+        <uib-pagination force-ellipses="true" boundary-link-numbers="true" max-size="16" rotate="true" ng-show="json.tableData.length>=0" ng-if="search && search !==''" ng-change="getMoreResults(true,search)" total-items="pageInfo.totalitems" ng-model="pagination.pagenumber" items-per-page="pagination.pagesize"></uib-pagination>
 
     </md-list>
 
