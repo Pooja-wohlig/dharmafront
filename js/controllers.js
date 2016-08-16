@@ -1,5 +1,6 @@
 var adminURL = "http://wohlig.io:81/";
 var mockURL = adminURL + "callApi/";
+var search='';
 
 angular.module('phonecatControllers', ['templateservicemod', 'navigationservice', 'ngSanitize', 'ngMaterial', 'ngMdIcons', 'ui.sortable', 'angular-clipboard', 'imageupload', 'ui.bootstrap', 'ui.tinymce'])
 
@@ -116,24 +117,26 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
         });
     };
-
+    $scope.search='';
+    $scope.searchClick=function(search){
+      $scope.search=search;
+      console.log($scope.search);
+      search=$scope.search;
+      $scope.getMoreResults(undefined,$scope.search);
+    };
     $http.get("./pageJson/" + jsonName + ".json").success(function(data) {
         _.each(data.urlFields, function(n, key) {
             urlParams[n] = jsonArr[key + 1];
         });
-        console.log(urlParams);
         $scope.json = data;
-        console.log($scope.json);
         if ($scope.json.sidemenu && $scope.json.sidemenu.length > 0) {
             $scope.sidemenuThere = true;
         }
         var idForCreate = $location.absUrl().split('%C2%A2')[1];
 
-        console.log(idForCreate);
         $scope.idForCreate = idForCreate;
         if (idForCreate) {
             $scope.goToCreatePage = function() {
-                console.log("In create");
                 $location.url("/page/" + $scope.json.createButtonUrl + idForCreate);
             };
 
@@ -175,7 +178,8 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     });
                 }
             });
-        } else if (data.pageType == "edit" || data.pageType == "tableview") {
+        } else if (data.pageType == "edit" || data.pageType == "tableview")
+        {
 
             console.log(urlParams);
             NavigationService.findOneProject($scope.json.preApi.url, urlParams, function(data) {
@@ -194,6 +198,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             }, function() {
                 console.log("Fail");
             });
+
             // get select fields dropdown
             _.each($scope.json.fields, function(n) {
                 if (n.type == "selectFromTable") {
@@ -217,7 +222,11 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                     });
                 }
             });
-        } else if (data.pageType == "view") {
+
+        }
+         else if (data.pageType == "view") {
+
+
             // call api for view data
             $scope.apiName = $scope.json.apiCall.url;
 
@@ -228,7 +237,7 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
                 pageno = parseInt($stateParams.no);
             }
             $scope.pagination = {
-                "search": "",
+                "search": $scope.search,
                 "pagenumber": pageno,
                 "pagesize": 10
             };
@@ -255,14 +264,17 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
             // call api for view data
             $scope.apiName = $scope.json.apiCall.url;
             $scope.pageInfo = {totalitems:5000};
-            $scope.getMoreResults = function(value) {
+            $scope.getMoreResults = function(value,search) {
+              $scope.search=search;
+              console.log(search);
                 if(value)
                 {
-                  console.log($scope.pagination);
+                      console.log($scope.search);
                   $state.go("pageno",{no:$scope.pagination.pagenumber,jsonName:$stateParams.jsonName});
                 }
                 else {
-                  console.log($scope.pagination);
+                      console.log($scope.search);
+                      $scope.pagination.search=$scope.search;
                   NavigationService.findProjects($scope.apiName, $scope.pagination, function(findData) {
                       console.log(findData);
                       if (findData.value !== false) {
@@ -287,6 +299,56 @@ angular.module('phonecatControllers', ['templateservicemod', 'navigationservice'
 
             };
             $scope.getMoreResults();
+
+            //SEARCH DROP dropDownName
+
+            // get select fields dropdown
+                if ($scope.json.apiCallForSearch) {
+                    NavigationService.getDropDown($scope.json.apiCallForSearch.url, function(data) {
+
+                        dropdownvalues = [];
+                        if (data) {
+                            for (var i = 0; i < data.data.length; i++) {
+                                var dropdown = {};
+                                dropdown._id = data.data[i]._id;
+                                    dropdown.name = data.data[i].name;
+                                dropdownvalues.push(dropdown);
+                            }
+                        }
+                        $scope.dropdownvalues=dropdownvalues;
+                        console.log(dropdownvalues);
+                    }, function() {
+                        console.log("Fail");
+                    });
+                }
+
+                $scope.getAwardByMovie=function(movieid){
+                    //
+                    $scope.pagination._id=movieid;
+                    $scope.apiName = $scope.json.apiCall.url;
+                    $scope.pageInfo = {totalitems:5000};
+                          NavigationService.findProjects($scope.apiName, $scope.pagination, function(findData) {
+                              console.log(findData);
+                              if (findData.value !== false) {
+                                  if (findData.data && findData.data.data && findData.data.data.length > 0) {
+                                      $scope.pageInfo.lastpage = findData.data.totalpages;
+                                      $scope.pageInfo.pagenumber = findData.data.pagenumber;
+                                      $scope.pageInfo.totalitems = $scope.pagination.pagesize * findData.data.totalpages;
+                                      $scope.json.tableData = findData.data.data;
+                                  } else {
+                                      $scope.json.tableData = [];
+                                        $scope.pageInfo.totalitems = 0;
+                                  }
+                              } else {
+                                  $scope.json.tableData = [];
+                                  $scope.pageInfo.totalitems = 0;
+                              }
+                              console.log($scope.pagination);
+                          }, function() {
+                              console.log("Fail");
+                          });
+
+                };
         }
         $scope.template = TemplateService.jsonType(data.pageType);
     });

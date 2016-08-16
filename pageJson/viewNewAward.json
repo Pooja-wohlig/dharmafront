@@ -1,5 +1,6 @@
 {
-    "title": "All News",
+    "title": "All Awards",
+      "addSearch": true,
     "desciption": "",
     "pageType": "view",
     "fields": [{
@@ -61,6 +62,9 @@
     "apiCall": {
         "url": "newaward/findLimited",
         "params": "_id"
+    },
+    "apiCallForSearch": {
+        "url": "movie/find"
     },
     "createButtonState": "page({jsonName:'createNewAward'})"
 }

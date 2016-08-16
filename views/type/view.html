@@ -1,5 +1,26 @@
 <section class="md-whiteframe-z1 users pb50">
     <md-list ng-cloak>
+      <md-input-container ng-if="json.addSearch">
+    <label>Movies</label>
+    <md-select ng-model="movie" ng-change="getAwardByMovie(movie)">
+      <md-option ng-repeat="dropdown in dropdownvalues" value="{{dropdown._id}}">
+        {{dropdown.name}}
+      </md-option>
+    </md-select>
+  </md-input-container>
+  <div class="search-input" ng-if="!json.addSearch">
+    <input ng-model="search" type="text">
+      <md-button class="md-raised md-primary" ng-click="searchClick(search);">Go</md-button>
+    </div>
+  <!-- <md-autocomplete
+              md-search-text="searchForm.name"
+              md-items="item in ctrl.querySearch(searchForm.name)"
+              md-item-text="item.display"
+              md-min-length="0"
+              placeholder="Search"
+              ng-model='search'
+              >
+          </md-autocomplete> -->
         <div class="pull-right">
             <a class="add-position" ui-sref="{{json.createButtonState}}" ng-hide="json.title=='All Newsletters' || json.title=='All Contacts' || json.title=='All Notification'">
                 <md-button class="md-fab md-primary md-mini" aria-label="Add Users">

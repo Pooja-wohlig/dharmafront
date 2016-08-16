@@ -3,6 +3,10 @@
     "desciption": "",
     "pageType": "view",
     "fields": [{
+        "name": "Movie",
+        "isSort": "",
+        "tableRef": "movie.name"
+    },{
             "name": "Image",
             "isSort": "",
             "tableRef": "image",
