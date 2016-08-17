@@ -21,10 +21,6 @@
         "tableRef": "image",
         "type": "image"
     }, {
-        "name": "Content",
-        "isSort": "",
-        "tableRef": "content"
-    }, {
       "name": "Status",
     "isSort": "",
     "tableRef": "status"

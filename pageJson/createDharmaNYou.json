@@ -5,13 +5,13 @@
     "pageType": "create",
     "fields": [{
         "name": "User",
-        "type": "selectFromTable",
+        "type": "text",
         "option": "single",
         "tableRef": "user",
         "placeholder": "Select User",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
-        "url": "user/getAll"
+        "url": ""
     }, {
         "name": "Image",
         "type": "image",

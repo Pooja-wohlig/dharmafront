@@ -15,13 +15,12 @@
         "model": "_id"
     }, {
         "name": "User",
-        "type": "selectFromTable",
-        "option": "single",
+        "type": "text",
         "tableRef": "user",
         "placeholder": "Select User",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
-        "url": "user/getAll",
+        "url": "",
         "model": "user"
     }, {
         "name": "Image",
