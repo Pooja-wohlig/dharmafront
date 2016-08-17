@@ -1,28 +1,30 @@
 {
-    "title": "All Users",
+    "title": "Dharma 140",
     "desciption": "",
     "pageType": "view",
+
     "fields": [{
-            "name": "Name",
-            "isSort": "",
-            "tableRef": "name"
-        }],
+        "name": "HashTag",
+        "isSort": "",
+        "tableRef": "hashTags",
+        "type": "String"
+    }],
     "action": [{
         "name": "edit",
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editUser",
+        "jsonPage": "editDharma140",
         "fieldsToSend": ["_id"],
-        "callFindOne": "user/getone"
+        "callFindOne": "Dharma140/getOne"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete User",
-        "content": "Are you sure you want to delete user?",
-        "api": "user/delete",
+        "title": "Delete ",
+        "content": "Are you sure you want to delete HashTag?",
+        "api": "Dharma140/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -41,7 +43,7 @@
     }],
     "filter": [{
         "name": "category",
-        "url": "http://chaitalee.com/user/getAll"
+        "url": "http://chaitalee.com/expertuser/getAll"
     }, {
         "name": "uploadcsv",
         "icon": "delete",
@@ -49,8 +51,8 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "user/findLimited",
-        "params": ""
+        "url": "dharma140/findLimited",
+        "params": "_id"
     },
-    "createButtonState": "page({jsonName:'createUser'})"
+    "createButtonState": "page({jsonName:'createDharma140'})"
 }

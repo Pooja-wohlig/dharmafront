@@ -1,28 +1,34 @@
 {
-    "title": "All Users",
+    "title": "Dharma AnswerUser",
     "desciption": "",
     "pageType": "view",
+
     "fields": [{
-            "name": "Name",
-            "isSort": "",
-            "tableRef": "name"
-        }],
+        "name": "Name",
+        "isSort": "",
+        "tableRef": "name"
+    }, {
+        "name": "Image",
+        "isSort": "",
+        "tableRef": "image",
+        "type": "image"
+    }],
     "action": [{
         "name": "edit",
         "icon": "mode_edit",
         "color": "blue",
         "action": "redirect",
-        "jsonPage": "editUser",
+        "jsonPage": "editDharmaAnswerUser",
         "fieldsToSend": ["_id"],
-        "callFindOne": "user/getone"
+        "callFindOne": "DharmaAnswerUser/getOne"
     }, {
         "name": "delete",
         "icon": "delete",
         "color": "red",
         "action": "apiCallConfirm",
-        "title": "Delete User",
-        "content": "Are you sure you want to delete user?",
-        "api": "user/delete",
+        "title": "Delete AnswerUser",
+        "content": "Are you sure you want to delete AnswerUser?",
+        "api": "DharmaAnswerUser/delete",
         "fieldsToSend": [{
             "name": "_id",
             "value": "_id"
@@ -41,7 +47,7 @@
     }],
     "filter": [{
         "name": "category",
-        "url": "http://chaitalee.com/user/getAll"
+        "url": "http://chaitalee.com/expertuser/getAll"
     }, {
         "name": "uploadcsv",
         "icon": "delete",
@@ -49,8 +55,8 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "user/findLimited",
-        "params": ""
+        "url": "DharmaAnswerUser/findLimited",
+        "params": "_id"
     },
-    "createButtonState": "page({jsonName:'createUser'})"
+    "createButtonState": "page({jsonName:'createDharmaAnswerUser'})"
 }

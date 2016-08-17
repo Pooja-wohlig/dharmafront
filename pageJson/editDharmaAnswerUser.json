@@ -1,6 +1,6 @@
 {
-    "title": "Edit User",
-    "jsonPage": "userView",
+    "title": "Edit Dharma AnswerUser",
+    "jsonPage": "viewDharmaAnswerUser",
     "desciption": "",
     "pageType": "edit",
     "urlFields": ["_id"],
@@ -14,29 +14,40 @@
         "url": "",
         "model": "_id"
     }, {
-        "name": " Name",
+        "name": "Name",
         "type": "text",
         "tableRef": "name",
-        "placeholder": "Enter name",
+        "placeholder": "Enter Name",
         "id": "input2",
         "validation": ["required", "trim", "unique"],
         "url": "",
         "model": "name"
-    }],
+    },{
+        "name": "Answer User Image",
+        "type": "image",
+        "tableRef": "image",
+        "model": "image",
+        "id": "input4",
+        "validation": ["required", "trim", "unique"],
+        "url": "",
+        "size": "50px x 50px"
+    }
+  ],
     "action": [{
         "name": "submit",
-        "action": "submitUser"
+        "action": "submitDharmaAnswerUser"
     }, {
         "name": "cancel",
-        "action": "cancelUser",
-        "stateName": "page({jsonName:'userView'})"
+        "action": "cancelDharmaAnswerUser",
+        "stateName": "page({jsonName:'viewDharmaAnswerUser'})"
     }],
     "apiCall": {
-        "url": "user/save",
+        "url": "DharmaAnswerUser/save",
         "params": "_id"
     },
     "preApi": {
-        "url": "user/getOne",
+        "url": "DharmaAnswerUser/getOne",
         "params": "_id"
     }
+
 }

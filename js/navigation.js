@@ -1,6 +1,6 @@
 // var adminurl = "http://blazen.io/";
-var adminurl = "http://104.199.151.75:82/";
-// var adminurl = "http://localhost:82/";
+// var adminurl = "http://104.199.151.75:82/";
+var adminurl = "http://localhost:82/";
 // var imgurl = "http://146.148.4.222/upload/";
 var imgpath = adminurl + "upload/readFile";
 var uploadurl = adminurl + "upload/";
@@ -9,6 +9,11 @@ var navigationservice = angular.module('navigationservice', [])
 
 .factory('NavigationService', function($http) {
   var navigation = [ {
+    name: "Users",
+    classis: "active",
+    link: "#/page/userView",
+    subnav: []
+  },{
     name: "Movies",
     classis: "active",
     link: "#/page/viewMovie",
@@ -53,6 +58,26 @@ var navigationservice = angular.module('navigationservice', [])
     classis: "active",
     link: "#/page/viewTag",
     subnav: []
+  },{
+      name: "Dharma 140",
+      classis: "active",
+      link: "#/page/viewDharma140",
+      subnav: []
+  },{
+      name: "Dharma Answer User",
+      classis: "active",
+      link: "#/page/viewDharmaAnswerUser",
+      subnav: []
+  },{
+      name: "Dharma And You",
+      classis: "active",
+      link: "#/page/viewDharmaNYou",
+      subnav: []
+  },{
+      name: "Dharma Insta",
+      classis: "active",
+      link: "#/page/viewDharmaInsta",
+      subnav: []
   }
 ];
 
