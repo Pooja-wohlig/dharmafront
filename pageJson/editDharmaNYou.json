@@ -25,12 +25,12 @@
     }, {
         "name": "Email",
         "type": "email",
-        "option": "single",
         "tableRef": "email",
         "placeholder": "Enter Email",
         "id": "input1",
         "validation": ["required", "trim", "unique"],
-        "url": ""
+        "url": "",
+        "model": "email"
     },{
         "name": "Image",
         "type": "image",
