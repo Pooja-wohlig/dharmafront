@@ -23,6 +23,15 @@
         "url": "",
         "model": "user"
     }, {
+        "name": "Email",
+        "type": "email",
+        "option": "single",
+        "tableRef": "email",
+        "placeholder": "Enter Email",
+        "id": "input1",
+        "validation": ["required", "trim", "unique"],
+        "url": ""
+    },{
         "name": "Image",
         "type": "image",
         "tableRef": "image",
