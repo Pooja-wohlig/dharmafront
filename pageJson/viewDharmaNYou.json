@@ -6,39 +6,15 @@
     "fields": [{
         "name": "User",
         "isSort": "",
-        "tableRef": "user.name"
-    }, {
-        "name": "Image",
-        "isSort": "",
-        "tableRef": "image",
-        "type": "image"
+        "tableRef": "user"
     }, {
         "name": "Question",
         "isSort": "",
         "tableRef": "question"
     }, {
-        "name": "Answer",
-        "isSort": "",
-        "tableRef": "answer"
-    }, {
-        "name": "AnswerUser",
-        "isSort": "",
-        "tableRef": "dharmaAnswerUser.name"
-    }, {
         "name": "Status",
         "isSort": "",
         "tableRef": "status"
-    }
-    , {
-        "name": "Q.Time",
-        "isSort": "",
-        "tableRef": "questionTimestamp"
-
-    }, {
-        "name": "Ans.Time",
-        "isSort": "",
-        "tableRef": "answerTimestamp"
-
     }
   ],
     "action": [{

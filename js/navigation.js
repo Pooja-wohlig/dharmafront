@@ -1,6 +1,6 @@
 // var adminurl = "http://blazen.io/";
-// var adminurl = "http://104.199.151.75:82/";
-var adminurl = "http://192.168.0.107:82/";
+var adminurl = "http://104.199.151.75:82/";
+// var adminurl = "http://192.168.0.107:85/";
 // var imgurl = "http://146.148.4.222/upload/";
 var imgpath = adminurl + "upload/readFile";
 var uploadurl = adminurl + "upload/";
@@ -64,12 +64,12 @@ var navigationservice = angular.module('navigationservice', [])
       link: "#/page/viewDharma140",
       subnav: []
   },{
-      name: "Dharma Answer User",
+      name: "Dharma And You Family",
       classis: "active",
       link: "#/page/viewDharmaAnswerUser",
       subnav: []
   },{
-      name: "Dharma And You",
+      name: "Dharma And You Questions",
       classis: "active",
       link: "#/page/viewDharmaNYou",
       subnav: []

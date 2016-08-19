@@ -3,11 +3,7 @@
     "desciption": "",
     "pageType": "view",
 
-    "fields": [{
-        "name": "Video",
-        "isSort": "",
-        "tableRef": "video"
-    }, {
+    "fields": [ {
         "name": "Name",
         "isSort": "",
         "tableRef": "name"

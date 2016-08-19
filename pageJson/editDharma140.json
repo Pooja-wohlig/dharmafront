@@ -15,7 +15,7 @@
         "model": "_id"
     }, {
         "name": "HashTag",
-        "type": "chips",
+        "type": "text",
         "tableRef": "hashTags",
         "placeholder": "Enter HashTag",
         "id": "input2",
