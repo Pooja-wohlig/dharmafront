@@ -78,6 +78,11 @@ var navigationservice = angular.module('navigationservice', [])
       classis: "active",
       link: "#/page/viewDharmaInsta",
       subnav: []
+  },{
+      name: "Config",
+      classis: "active",
+      link: "#/page/viewConfig",
+      subnav: []
   }
 ];
 
