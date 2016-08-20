@@ -11,7 +11,7 @@
     },{
         "name": "Description",
         "isSort": "",
-        "tableRef": "desciption",
+        "tableRef": "description",
         "type": "String"
     }],
     "action": [{
@@ -56,7 +56,7 @@
         "action": "uploadcsv"
     }],
     "apiCall": {
-        "url": "NewConfig/getAll",
+        "url": "NewConfig/findLimited",
         "params": "_id"
     },
     "createButtonState": "page({jsonName:'createConfig'})"

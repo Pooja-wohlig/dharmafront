@@ -25,12 +25,12 @@
     }, {
         "name": "Description",
         "type": "text",
-        "tableRef": "desciption",
+        "tableRef": "description",
         "placeholder": "Enter Description",
         "id": "input2",
         "validation": ["required", "trim", "unique"],
         "url": "",
-        "model": "desciption"
+        "model": "description"
     }, {
         "name": "Video Url",
         "type": "text",
