@@ -24,7 +24,7 @@
         "model": "title"
     }, {
         "name": "Description",
-        "type": "text",
+        "type": "tinymce",
         "tableRef": "description",
         "placeholder": "Enter Description",
         "id": "input2",

@@ -13,7 +13,7 @@
         "url": ""
     }, {
         "name": "Description",
-        "type": "text",
+        "type": "textarea",
         "tableRef": "description",
         "placeholder": "Enter Description",
         "id": "input2",
