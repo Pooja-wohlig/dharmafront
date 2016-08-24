@@ -198,6 +198,25 @@ li.pagination-page.ng-scope.active a {
     padding: 10px;
   }
 }
+.main-sec{
+  position: relative;
+}
+.pos-abs{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+.w100{
+  width: 100%;
+}
+.main-img{
+  margin: 0px auto;
+
+}
+.w200{
+  width: 200px;
+}
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at http://material.angularjs.org/license.
