@@ -223,11 +223,11 @@ md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolb
 .md-button.md-default-theme.md-primary.md-raised:not([disabled]):hover, .md-button.md-primary.md-raised:not([disabled]):hover, .md-button.md-default-theme.md-primary.md-fab:not([disabled]):hover, .md-button.md-primary.md-fab:not([disabled]):hover {
   background-color: darken(#f37021, 10%);
 }
-.md-button.md-default-theme.md-warn.md-raised, .md-button.md-warn.md-raised, .md-button.md-default-theme.md-warn.md-fab, .md-button.md-warn.md-fab {
+.md-button.md-default-theme.md-warn.md-raised, .md-button.md-warn.md-raised, .md-button.md-default-theme.md-warn.md-fab, .md-button.md-warn.md-fab,a.md-button.md-default-theme.md-warn.md-raised, a.md-button.md-warn.md-raised, a.md-button.md-default-theme.md-warn.md-fab, a.md-button.md-warn.md-fab, .md-button.md-default-theme.md-warn.md-raised, .md-button.md-warn.md-raised, .md-button.md-default-theme.md-warn.md-fab, .md-button.md-warn.md-fab {
     color: #f37021;
     background-color: white;
 }
-.md-button.md-default-theme.md-warn.md-raised:not([disabled]):hover, .md-button.md-warn.md-raised:not([disabled]):hover, .md-button.md-default-theme.md-warn.md-fab:not([disabled]):hover, .md-button.md-warn.md-fab:not([disabled]):hover {
+.md-button.md-default-theme.md-warn.md-raised:not([disabled]):hover, .md-button.md-warn.md-raised:not([disabled]):hover, .md-button.md-default-theme.md-warn.md-fab:not([disabled]):hover, .md-button.md-warn.md-fab:not([disabled]):hover, a.md-button.md-default-theme.md-warn.md-raised:not([disabled]):hover, a.md-button.md-warn.md-raised:not([disabled]):hover, a.md-button.md-default-theme.md-warn.md-fab:not([disabled]):hover, a.md-button.md-warn.md-fab:not([disabled]):hover, .md-button.md-default-theme.md-warn.md-raised:not([disabled]):hover, .md-button.md-warn.md-raised:not([disabled]):hover, .md-button.md-default-theme.md-warn.md-fab:not([disabled]):hover, .md-button.md-warn.md-fab:not([disabled]):hover {
   background-color: darken(white,10%);
 }
 /*

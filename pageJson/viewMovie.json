@@ -39,7 +39,7 @@
     "action": [{
         "name": "edit",
         "icon": "mode_edit",
-        "color": "blue",
+        "color": "#f37021",
         "action": "redirect",
         "jsonPage": "editMovie",
         "fieldsToSend": ["_id"],
@@ -60,7 +60,7 @@
     "button": [{
         "name": "excelexport",
         "icon": "print",
-        "color": "blue",
+        "color": "#f37021",
         "action": "excelexport"
     }, {
         "name": "uploadcsv",
