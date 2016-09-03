@@ -1,5 +1,6 @@
 {
     "title": "All Dharmatv",
+      "addSearch": true,
     "desciption": "",
     "pageType": "view",
     "fields": [{
@@ -70,6 +71,9 @@
     "apiCall": {
         "url": "dharmatv/findLimited",
         "params": "_id"
+    },
+    "apiCallForSearch": {
+        "url": "movie/find"
     },
     "createButtonState": "page({jsonName:'createDharmatv'})"
 }

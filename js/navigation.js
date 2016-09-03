@@ -84,6 +84,11 @@ var navigationservice = angular.module('navigationservice', [])
       classis: "active",
       link: "#/page/viewConfig",
       subnav: []
+  },{
+      name: "Subscribe",
+      classis: "active",
+      link: "#/page/viewSubscribe",
+      subnav: []
   }
 ];
 
