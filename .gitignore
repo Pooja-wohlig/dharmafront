@@ -6,3 +6,5 @@ w/
 production/
 *.zip
 css/
+
+.DS_Store
